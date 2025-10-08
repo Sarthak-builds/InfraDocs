@@ -1,18 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
-const inter = Inter({
-    variable: "--font-inter",
-    subsets: ["latin"],
-    display: "swap",
-    axes: ["opsz"],
-});
 
-export const metadata: Metadata = {
-    title: "Modern Design Tool Landing Page",
-    description: "Created with the help of Frontend Tribe",
-};
 
 export default function RootLayout({
     children,
@@ -21,8 +12,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/></head>
+            
             <body
-                className={`${inter.variable} font-sans antialiased bg-neutral-950 text-white`}
+                className={` font-sans antialiased bg-neutral-950 text-white`}
             >
                 {children}
             </body>
