@@ -18,6 +18,7 @@ const config: Config = {
         },
         fontFamily: {
             sans: ["var(--font-inter)", "sans-serif"],
+            'special-gothic': ['"Special Gothic"', 'sans-serif'],
         },
         screens: {
             sm: "375px",
