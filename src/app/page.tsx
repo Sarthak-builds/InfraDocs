@@ -1,6 +1,7 @@
 import Navbar from "@/sections/Navbar";
 import Hero from "@/sections/Hero";
 import LogoTicker from "@/sections/LogoTicker";
+import Introduction from "@/sections/Introduction";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         <Navbar></Navbar>
         <Hero></Hero>
         <LogoTicker></LogoTicker>
+        <Introduction></Introduction>
         </>
     )
 }
