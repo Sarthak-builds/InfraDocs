@@ -4,6 +4,7 @@ import avatar1 from '@/assets/images/avatar-ashwin-santiago.jpg'
 import avatar2 from '@/assets/images/avatar-lula-meyers.jpg'
 import avatar3 from '@/assets/images/avatar-florence-shaw.jpg'
 import Image from "next/image";
+import Avatar from "@/components/Avatar";
 
 const features = [
     "Asset Library",
@@ -25,20 +26,34 @@ export default function Features() {
             </h2>
             <div className="mt-12 grid  grid-cols-1 gap-8 ">
                 <FeatureCard title="real-time Collaboration" description=" Work together seamlessly with conflictionediting.">
-                <div>
-                    <div>
-                        <Image src={avatar1} alt='Avatar 1'/>
-                    </div>
-                    <div>
-                        <Image src={avatar2} alt='Avatar 2'/>
-                    </div>
-                    <div>
-                        <Image src={avatar3} alt='Avatar 3'/>
-                    </div>
+                <div className="aspect-video flex items-center justify-center">
+                    <Avatar className="z-40">
+                        <Image src={avatar1} alt='Avatar 1' className="rounded-full"/>
+                    </Avatar>
+                    <Avatar className="-ml-6 border-indigo-500 z-30">
+                        <Image src={avatar2} alt='Avatar 2'className="rounded-full"/>
+                    </Avatar>
+                    <Avatar className="-ml-6 border-amber-600 z-20">
+                        <Image src={avatar3} alt='Avatar 3'className="rounded-full"/>
+                    </Avatar>
+                    <Avatar className="-ml-6 border-transparent">
+                        <div className="size-full bg-neutral-700 rounded-full inline-flex items-center justify-center gap-1">
+                        {Array.from({ length: 3}).map((_, i)=> (
+                            <span className="size-1.5 rounded-full bg-white inline-flex" key={i}>
+
+                            </span>
+                        ))}
+                      
+                        </div>
+                    </Avatar>
                 </div>
                 </FeatureCard>
-               <FeatureCard title="Interactive Prototyping" description=" Enagage your client with prototypes that require user actions."></FeatureCard>
-               <FeatureCard title="Keyboard Wuick Actions" description=" Powerful commands to help you create designs more quickly."></FeatureCard>
+               <FeatureCard title="Interactive Prototyping" description=" Enagage your client with prototypes that require user actions.">
+                <div className="aspect-video flex items-center justify-center">
+                    <p className="text-4xl font-extrabold text-white/20 text-center"> We've achived <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Incredible</span> this year.</p>
+                </div>
+               </FeatureCard>
+               <FeatureCard title="Keyboard Quick Actions" description=" Powerful commands to help you create designs more quickly."></FeatureCard>
             </div>
             <div>
                 { features.map(feature => (
