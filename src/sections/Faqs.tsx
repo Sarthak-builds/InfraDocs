@@ -1,3 +1,6 @@
+import Tag from "@/components/Tag";
+import { twMerge } from "tailwind-merge";
+
 const faqs = [
     {
         question: "How is Layers different from other design tools?",
@@ -22,5 +25,28 @@ const faqs = [
 ];
 
 export default function Faqs() {
-    return <div>Faqs</div>;
+    const selectedindex = 0;
+    return <section className="py-24">
+        <div className="container">
+           <div className="flex justify-center">
+               <Tag>Faqs</Tag>
+           </div>
+            <div className="text-6xl font-medium mt-6 text-center max-w-xl mx-auto">
+                <h2> Questions? We've got <span className="text-lime-400">answers</span></h2>
+            </div>
+            <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
+               {faqs.map((faq, faqIndex)=> (
+                <div key={faq.question} className="bg-neutral-900 rounded-2xl border bprder-white/10 p-6">
+                    <div className="flex gap-2 justify-between items-center">
+                        <h3 className="font-medium">{faq.question}</h3>
+                       <svg className={twMerge("text-lime-400 size-6 flex-shrink-0",selectedindex===faqIndex && "rotate-45")} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(163,230,53,1)"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path></svg>
+                       </div> 
+                       <div className={twMerge("mt-6",selectedindex!== faqIndex && "hidden" )}>
+                        <p className="text-white/50">{faq.answer}</p></div>
+                       
+                    </div>
+               ))} 
+            </div>
+        </div>
+    </section>;
 }
